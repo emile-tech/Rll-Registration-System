@@ -11,10 +11,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_GET["id"];
 
     // Validate name
-    $meeting = trim($_POST["meeting"]);
+    $name = trim($_POST["name"]);
     // Validate address address
     $theme = trim($_POST["theme"]);
-    $data = ['meeting' => $meeting, 'theme' => $theme, "id" => $id];
+    $startDate = trim($_POST["startDate"]);
+    $endDate = trim($_POST["endDate"]);
+    $biblestudyGroups = trim($_POST["biblestudyGroups"]);
+    $data = ['meeting' => $name, 'theme' => $theme, 'startDate' => $startDate, 'endDate' => $endDate, 'biblestudyGroups' => $biblestudyGroups, "id" => $id];
     $result = $model->update('meeting', $data);
     $msg = $result['message'];
 
@@ -29,8 +32,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $meeting = $result['rows'];
         // Retrieve individual field value
-        $meeting = $meeting["meeting"];
-        $theme = $theme["theme"];
+        $name = $meeting["name"];
+        $theme = $meeting["theme"];
+        $startDate = $meeting["startDate"];
+        $endDate = $meeting["endDate"];
+        $bibleStudyGroups = $meeting["bibleStudyGroups"];
     }
 }
 
@@ -42,24 +48,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h2>Meeting: Edit</h2>
     <form action="edit_meeting.php?id=<?= $id; ?>" method="post">
     <div>
-            <label for="meeting">Meeting</label>
-            <input type="text" meeting="meeting" placeholder="Meeting" id="meeting" />
+            <label for="meeting">Name</label>
+            <input type="text" name="meeting" id="meeting" value="<?= $name ?>">
         </div>
         <div>
             <label for="theme">Theme</label>
-            <input type="text" name="theme" placeholder="Enter the meeting Name" id="theme" />
+            <input type="text" name="theme" id="theme" value="<?= $theme ?>">
         </div>
         <div>
             <label for="startDate">Start Date</label>
-            <input type="date" name="startDate" placeholder="Meeting start Date" id="startDate" />
+            <input type="date" name="startDate" id="startDate" value="<?= $startDate ?>">
         </div>
         <div>
-            <label for="endDate">End Date</label>
-            <input type="date" name="startDate" placeholder="Meeting End Date" id="endDate" />
+            <label for="endDate"> End Date</label>
+            <input type="date" name="endDate" id="endDate" value="<?= $endDate ?>">
         </div>
         <div>
-            <label for="biblestudyGroups">Bible Study Group</label>
-            <input type="number" name="biblestudyGroups" placeholder="Bible Study Groups" id="biblestudyGroups" />
+            <label for="bibleStudyGroups"> Bible Study Groups</label>
+            <input type="number" name="bibleStudyGroups" id="bibleStudyGroups" value="<?= $bibleStudyGroups ?>">
         </div>
         <input type="submit" value="Submit">
     </form>
