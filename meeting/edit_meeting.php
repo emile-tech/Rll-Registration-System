@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $meeting = $result['rows'];
         // Retrieve individual field value
         $meeting = $meeting["meeting"];
-        $theme = $meeting["theme"];
+        $theme = $theme["theme"];
     }
 }
 
