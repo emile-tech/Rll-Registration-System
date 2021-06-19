@@ -27,8 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h2>Meeting: New</h2>
     <form action=<?= $_SERVER['PHP_SELF']; ?> method="post">
         <div>
-            <label for="name">Name</label>
-            <input type="text" name="name" placeholder="John" id="name" />
+        <label for="meeting">Meeting</label>
+            <input type="text" meeting="meeting" placeholder="Meeting" id="meeting" />
         </div>
         <div>
             <label for="theme">Theme</label>
