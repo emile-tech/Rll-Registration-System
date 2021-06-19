@@ -42,8 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h2>Meeting: Edit</h2>
     <form action="edit_meeting.php?id=<?= $id; ?>" method="post">
     <div>
-            <label for="name">Name</label>
-            <input type="text" name="name" placeholder="John" id="name" />
+            <label for="meeting">Meeting</label>
+            <input type="text" meeting="meeting" placeholder="Meeting" id="meeting" />
         </div>
         <div>
             <label for="theme">Theme</label>
