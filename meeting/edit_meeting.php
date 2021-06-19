@@ -11,10 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_GET["id"];
 
     // Validate name
-    $name = trim($_POST["name"]);
+    $meeting = trim($_POST["meeting"]);
     // Validate address address
     $theme = trim($_POST["theme"]);
-    $data = ['name' => $name, 'theme' => $theme, "id" => $id];
+    $data = ['meeting' => $meeting, 'theme' => $theme, "id" => $id];
     $result = $model->update('meeting', $data);
     $msg = $result['message'];
 
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $meeting = $result['rows'];
         // Retrieve individual field value
-        $name = $meeting["name"];
+        $meeting = $meeting["meeting"];
         $theme = $meeting["theme"];
     }
 }
