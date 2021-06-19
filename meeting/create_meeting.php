@@ -9,12 +9,12 @@ $msg = "";
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate name
-    $meeting = trim($_POST["name"]);
+    $name = trim($_POST["name"]);
     $theme = trim($_POST["theme"]);
     $startDate = trim($_POST["startDate"]);
     $endDate = trim($_POST["endDate"]);
-    $biblestudyGroup = trim($_POST["biblestudyGroup"]);
-    $data = ['meeting' => $meeting, 'theme' => $theme, 'startDate' => $startDate, 'endDate' => $endDate, 'biblestudyGroup' => $biblestudyGroup];
+    $bibleStudyGroups = trim($_POST["biblestudyGroups"]);
+    $data = ['name' => $name, 'theme' => $theme, 'startDate' => $startDate, 'endDate' => $endDate, 'biblestudyGroups' => $bibleStudyGroups];
 
     $result = $model->insert('meeting', $data);
     $msg = $result['message'];
@@ -30,8 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h2>Meeting: New</h2>
     <form action=<?= $_SERVER['PHP_SELF']; ?> method="post">
         <div>
-        <label for="meeting">Meeting</label>
-            <input type="text" meeting="meeting" placeholder="Meeting" id="meeting" />
+        <label for="name">Meeting</label>
+            <input type="text" name="name" placeholder="name" id="name" />
         </div>
         <div>
             <label for="theme">Theme</label>
@@ -46,8 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="date" name="startDate" placeholder="Meeting End Date" id="endDate" />
         </div>
         <div>
-            <label for="biblestudyGroups">Bible Study Group</label>
-            <input type="number" name="biblestudyGroups" placeholder="Bible Study Groups" id="biblestudyGroups" />
+            <label for="bibleStudyGroups">Bible Study Group</label>
+            <input type="number" name="bibleStudyGroups" placeholder="Bible Study Groups" id="bibleStudyGroups" />
         </div>
         <input type="submit" value="Submit">
     </form>
