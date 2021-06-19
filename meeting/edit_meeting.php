@@ -49,18 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="theme">Theme</label>
             <input type="text" name="theme" placeholder="Enter the meeting Name" id="theme" />
         </div>
-        <div>
-            <label for="startDate">Start Date</label>
-            <input type="date" name="startDate" placeholder="Meeting start Date" id="startDate" />
-        </div>
-        <div>
-            <label for="endDate">End Date</label>
-            <input type="date" name="startDate" placeholder="Meeting End Date" id="endDate" />
-        </div>
-        <div>
-            <label for="biblestudyGroups">Bible Study Group</label>
-            <input type="number" name="biblestudyGroups" placeholder="Bible Study Groups" id="biblestudyGroups" />
-        </div>
         <input type="submit" value="Submit">
     </form>
 </div>
