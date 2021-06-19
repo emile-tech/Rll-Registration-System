@@ -41,13 +41,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="content">
     <h2>Meeting: Edit</h2>
     <form action="edit_meeting.php?id=<?= $id; ?>" method="post">
-        <div>
+    <div>
             <label for="name">Name</label>
-            <input type="text" name="name" id="name" value="<?= $name ?>">
+            <input type="text" name="name" placeholder="John" id="name" />
         </div>
         <div>
             <label for="theme">Theme</label>
-            <input type="text" name="theme" id="theme" value="<?= $theme ?>">
+            <input type="text" name="theme" placeholder="Enter the meeting Name" id="theme" />
+        </div>
+        <div>
+            <label for="startDate">Start Date</label>
+            <input type="date" name="startDate" placeholder="Meeting start Date" id="startDate" />
+        </div>
+        <div>
+            <label for="endDate">End Date</label>
+            <input type="date" name="startDate" placeholder="Meeting End Date" id="endDate" />
+        </div>
+        <div>
+            <label for="biblestudyGroups">Bible Study Group</label>
+            <input type="number" name="biblestudyGroups" placeholder="Bible Study Groups" id="biblestudyGroups" />
         </div>
         <input type="submit" value="Submit">
     </form>
