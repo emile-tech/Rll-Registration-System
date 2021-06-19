@@ -11,7 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate name
     $name = trim($_POST["name"]);
     $theme = trim($_POST["theme"]);
-    $data = ['name' => $name, 'theme' => $theme];
+    $startDate = trim($_POST["startDate"]);
+    $endDate = trim($_POST["endDate"]);
+    $biblestudyGroup = trim($_POST["biblestudyGroup"]);
+    $data = ['name' => $name, 'theme' => $theme, 'startDate' => $StartDate, 'endDate' => $endDate, 'biblestudyGroup' => $biblestudyGroup];
 
     $result = $model->insert('meeting', $data);
     $msg = $result['message'];
