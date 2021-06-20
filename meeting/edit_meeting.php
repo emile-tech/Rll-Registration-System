@@ -16,8 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $theme = trim($_POST["theme"]);
     $startDate = trim($_POST["startDate"]);
     $endDate = trim($_POST["endDate"]);
-    $biblestudyGroups = trim($_POST["biblestudyGroups"]);
-    $data = ['meeting' => $name, 'theme' => $theme, 'startDate' => $startDate, 'endDate' => $endDate, 'biblestudyGroups' => $biblestudyGroups, "id" => $id];
+    $bibleStudyGroups = trim($_POST["bibleStudyGroups"]);
+    $data = ['name' => $name, 'theme' => $theme, 'startDate' => $startDate, 'endDate' => $endDate, 'bibleStudyGroups' => $bibleStudyGroups, "id" => $id];
     $result = $model->update('meeting', $data);
     $msg = $result['message'];
 
@@ -48,8 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h2>Meeting: Edit</h2>
     <form action="edit_meeting.php?id=<?= $id; ?>" method="post">
     <div>
-            <label for="meeting">Name</label>
-            <input type="text" name="meeting" id="meeting" value="<?= $name ?>">
+            <label for="name">Meeting</label>
+            <input type="text" name="name" id="name" value="<?= $name ?>">
         </div>
         <div>
             <label for="theme">Theme</label>
