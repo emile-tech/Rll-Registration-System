@@ -13,8 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $theme = trim($_POST["theme"]);
     $startDate = trim($_POST["startDate"]);
     $endDate = trim($_POST["endDate"]);
-    $bibleStudyGroups = trim($_POST["biblestudyGroups"]);
-    $data = ['name' => $name, 'theme' => $theme, 'startDate' => $startDate, 'endDate' => $endDate, 'biblestudyGroups' => $bibleStudyGroups];
+    $bibleStudyGroups = trim($_POST["bibleStudyGroups"]);
+    $data = ['name' => $name, 'theme' => $theme, 'startDate' => $startDate, 'endDate' => $endDate, 'bibleStudyGroups' => $bibleStudyGroups];
 
     $result = $model->insert('meeting', $data);
     $msg = $result['message'];
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div>
             <label for="endDate">End Date</label>
-            <input type="date" name="startDate" placeholder="Meeting End Date" id="endDate" />
+            <input type="date" name="endDate" placeholder="Meeting End Date" id="endDate" />
         </div>
         <div>
             <label for="bibleStudyGroups">Bible Study Group</label>
