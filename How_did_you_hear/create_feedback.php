@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $msg = $result['message'];
 
     //$result['id'] contains the last inserted id
-    //redirect("list_meeting.php");
+    redirect("list_meeting.php");
 }
 ?>
 
