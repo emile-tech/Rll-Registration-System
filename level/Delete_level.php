@@ -24,8 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
 <div class="content delete">
     <h2>Level: Delete</h2>
-    <p><b>ID: </b><?= $gender['id'] ?></p>
-    <p><b>Name:</b> <?= $gender['name']; ?></p>
+    <p><b>ID: </b><?= $level['id'] ?></p>
+    <p><b>Name:</b> <?= $level['name']; ?></p>
 
 
 
