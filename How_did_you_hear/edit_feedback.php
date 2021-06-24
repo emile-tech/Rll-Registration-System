@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate name
     $name = trim($_POST["name"]);
     // Validate address address
-    $data = ['name' => $name,];
+    $data = ['name' => $name];
     $result = $model->update('how_did_you_hear', $data);
     $msg = $result['message'];
 
@@ -31,20 +31,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $how_did_you_hear["name"];
         
     }
+
 }
+
 ?>
 
-<?= template_header('Create') ?>
+<?= template_header('Edit') ?>
 
 <div class="content">
-    <h2>List of Feedback?</h2>
-    <form action=<?= $_SERVER['PHP_SELF']; ?> method="post">
-        <div>
-        <label for="name">Name</label>
-        <input type="text" name="name"  id="name" />
-        </div>
+    <h2>Feedback: Edit</h2>
+    <form action="edit_feedback.php?id=<?= $id; ?>" method="post">
+    <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" ?>
+    </div>
         <input type="submit" value="Submit">
     </form>
-    <p><?= $msg ?></p>
-
 </div>
+
+<?= template_footer() ?>
