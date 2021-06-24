@@ -14,24 +14,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = trim($_POST["name"]);
     // Validate address address
     $data = ['name' => $name];
-    $result = $model->update('how_did_you_hear', $data);
+    $result = $model->update('level', $data);
     $msg = $result['message'];
 
-    header('location: list_feedback.php');
+    header('location: list_level.php');
 } else {
     // Check existence of id parameter before processing further
     if (isset($_GET["id"]) && !empty($_GET["id"])) {
         // Get URL parameter
         $id =  trim($_GET["id"]);
 
-        $result = $model->fetch('how_did_you_hear', $id);
+        $result = $model->fetch('level', $id);
 
-        $how_did_you_hear = $result['rows'];
+        $level = $result['rows'];
         // Retrieve individual field value
-        $name = $how_did_you_hear["name"];
-        
+        $name = $level["name"];
     }
-
 }
 
 ?>
@@ -39,12 +37,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?= template_header('Edit') ?>
 
 <div class="content">
-    <h2>Feedback: Edit</h2>
-    <form action="edit_feedback.php?id=<?= $id; ?>" method="post">
+    <h2>Level: Edit</h2>
+    <form action="edit_level.php?id=<?= $id; ?>" method="post">
     <div>
-            <label for="name">Name</label>
+            <label for="name">Level</label>
             <input type="text" name="name" id="name" value="<?= $name ?>">
-    </div>
+        </div>
         <input type="submit" value="Submit">
     </form>
 </div>

@@ -5,7 +5,7 @@ require '../functions.php';
 
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
     $id = $_GET["id"];
-    $how_did_you_hear = null;
+    $gender = null;
     if (isset($_GET["confirm"])) {
         if ($_GET["confirm"] == "yes") {
             $model->delete('gender', $id);

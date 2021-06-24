@@ -28,8 +28,8 @@ $genders = $result['rows'];
                     <td><?= $gender['id'] ?></td>
                     <td><?= $gender['name'] ?></td>
                     <td class="actions">
-                        <a href="edit_feedback.php?id=<?= $gender['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>
-                        <a href="delete_feedback.php?id=<?= $gender['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
+                        <a href="edit_gender.php?id=<?= $gender['id'] ?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>
+                        <a href="delete_gender.php?id=<?= $gender['id'] ?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
                     </td>
                 </tr>
             <?php endforeach;
